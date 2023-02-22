@@ -10,14 +10,19 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:php-helpfull-snippets.helloWorld"
   ],
-  "main": "./extension.js",
+  "main": "./src/extension.js",
   "contributes": {
-    "commands": [{
-      "command": "php-helpfull-snippets.helloWorld",
-      "title": "Hello World"
-    }]
+    "commands": [
+      {
+        "command": "php-helpfull-snippets.helloWorld",
+        "title": "Hello World"
+      },
+      {
+				"command": "php-helpfull-snippets.createSimpleFile",
+				"title": "PHP: Create simple php file"
+			}
+    ]
   },
   "scripts": {
     "lint": "eslint .",
