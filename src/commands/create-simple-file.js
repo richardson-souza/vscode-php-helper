@@ -1,8 +1,6 @@
 const vscode = require('vscode');
 const fs = require('fs');
 
-const name = 'php-helpfull-snippets.createPHPFile';
-
 async function createSimpleFile() {
     const fileName = await vscode.window.showInputBox(
         {
@@ -11,9 +9,8 @@ async function createSimpleFile() {
         }
     );
 
-    //TODO: validate file name
-
     if (!fileName) {
+        vscode.window.setStatusBarMessage(`Invalid file.`, 3000);
         return;
     }
 
@@ -24,20 +21,28 @@ async function createSimpleFile() {
         canSelectFolders: true
     };
 
-    vscode.window.showOpenDialog(options).then(fileUri => {
+    const simpleContent = '<?php\n';
+
+    const fileUri = await vscode.window.showOpenDialog(options).then(fileUri => {
         if (fileUri && fileUri[0]) {
-            fs.writeFile(fileUri[0].fsPath + '/' + fileName, '<?php\n', err => {
+            const savedFile = fileUri[0].fsPath + '/' + fileName;
+            fs.writeFile(savedFile, simpleContent, err => {
                 if (err) {
-                    console.error(err);
+                    vscode.window.setStatusBarMessage(`${fileName}` + 'not saved', 3000);
                 }
-                vscode.window.showInformationMessage('File ' + fileName + ' has created.');
-                // TODO: open to edit in vscode
             });
+            return savedFile;
         }
     });
+
+    if (fileUri) {
+        vscode.workspace.openTextDocument(fileUri).then(document => {
+            vscode.window.showTextDocument(document);
+        });
+    }
+
 }
 
 module.exports = {
-    name,
     createSimpleFile
 }
