@@ -1,0 +1,1 @@
+const createPHPFileCommandName = "php-helper.createPHPFile";

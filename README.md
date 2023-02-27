@@ -1,6 +1,6 @@
-# php-helpfull-snippets README
+# php-helper README
 
-This is the README for your extension "php-helpfull-snippets". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "php-helper". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
