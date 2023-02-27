@@ -1,10 +1,28 @@
 {
-    "name": "php-helpfull-snippets",
-    "displayName": "Php helpfull snippets",
-    "description": "PHP helpfull snippets provides a set of snippets for PHP developers - VScode Extension",
+    "name": "php-helper",
+    "displayName": "Php helper",
+    "description": "Php helper for PHP developers - VScode Extension",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.74.0"
+    },
+    "publisher": "developers",
+    "icon": "logo.png",
+    "galleryBanner": {
+        "color": "#030518",
+        "theme": "dark"
+    },
+    "keywords": [
+        "php",
+        "class",
+        "code"
+    ],
+    "repository": {
+        "url": "https://github.com/richardson-souza/vscode-php-helper.git"
+    },
+    "homepage": "https://github.com/richardson-souza/vscode-php-helper.git",
+    "bugs": {
+        "url": "https://github.com/richardson-souza/vscode-php-helper.git/issues"
     },
     "categories": [
         "Other"
@@ -14,14 +32,14 @@
     "contributes": {
         "commands": [
             {
-                "command": "php-helpfull-snippets.createSimpleFile",
+                "command": "php-helper.createSimpleFile",
                 "title": "PHP: Create simple php file"
             }
         ],
         "menus": {
             "explorer/context": [
                 {
-                    "command": "php-helpfull-snippets.createSimpleFile",
+                    "command": "php-helper.createSimpleFile",
                     "when": "explorerResourceIsFolder",
                     "group": "navigation@-1"
                 }

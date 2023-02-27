@@ -1,1 +1,1 @@
-const createPHPFileCommandName = "php-helpfull-snippets.createPHPFile";
+const createPHPFileCommandName = "php-helper.createPHPFile";

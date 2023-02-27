@@ -16,6 +16,9 @@ async function fileOpenDialog() {
 
 }
 
+/**
+ * @param {string} type
+ */
 async function inputFileName(type) {
     const fileName = await vscode.window.showInputBox({
         title: "New PHP " + type.toUpperCase(),
@@ -31,6 +34,9 @@ async function inputFileName(type) {
     return fileName.endsWith('.php') ? fileName : fileName + '.php';
 }
 
+/**
+ * @param {string} fullpath
+ */
 function openDocument(fullpath) {
     if (!fullpath) {
         showErrorMessage('File not found!');
